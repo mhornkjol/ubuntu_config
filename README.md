@@ -55,6 +55,10 @@ under: \
 `sudo systemctl enable --now keyd` \
 Create `/etc/keyd.default`
 
+## Install rust
+
+`$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh`
+
 ## Install vsCode
 
 Download [deb package](https://go.microsoft.com/fwlink/?LinkID=760868) \
@@ -69,7 +73,26 @@ Download [deb package](https://go.microsoft.com/fwlink/?LinkID=760868) \
 - ms-python.python
 - ms-python.vscode-pylance
 - vscodevim.vim
+- rust-analyzer
 
 ### Config
 
 `config_files/settings.json`
+
+### Keybindings
+
+`config_files/keybindings.json`
+
+## Python venv
+
+`sudo apt install python3.12-venv` \
+`python3 -m venv default` in `~/.virtualenvs`
+
+## Install pwntools in venv
+
+`source ~/.virtualenvs/default/bin/activate.fish` \
+`python3 -m pip install pwntools`
+
+## Install pwngdb
+
+`curl -qsL 'https://install.pwndbg.re' | sh -s -- -t pwndbg-gdb`
