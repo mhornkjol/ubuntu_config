@@ -96,3 +96,15 @@ Download [deb package](https://go.microsoft.com/fwlink/?LinkID=760868) \
 ## Install pwngdb
 
 `curl -qsL 'https://install.pwndbg.re' | sh -s -- -t pwndbg-gdb`
+
+## Install Ida
+
+Install if necessary: \
+`sudo apt install libxcb-xinerama0`
+
+Download the installer from their [website](https://my.hex-rays.com/dashboard/download-center/installers/release). \
+Download the license for their [website](https://my.hex-rays.com/dashboard/licenses).
+
+Make the installer executable and run it.
+
+Move the lisence file into the installation folder.
