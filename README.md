@@ -74,6 +74,7 @@ Download [deb package](https://go.microsoft.com/fwlink/?LinkID=760868) \
 - ms-python.vscode-pylance
 - vscodevim.vim
 - rust-analyzer
+- C/C++ Extension Pack
 
 ### Config
 
@@ -108,3 +109,7 @@ Download the license for their [website](https://my.hex-rays.com/dashboard/licen
 Make the installer executable and run it.
 
 Move the lisence file into the installation folder.
+
+## Install Obsidian
+
+`sudo snap install obsidian --classic`
