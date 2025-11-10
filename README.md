@@ -4,7 +4,7 @@
 
 `sudo apt update && sudo apt upgrade` \
 reboot \
-`sudo apt install git make gcc gnome-tweaks curl`
+`sudo apt install git make gcc gnome-tweaks curl whois`
 
 ## Install fish
 
