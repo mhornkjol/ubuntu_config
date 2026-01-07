@@ -4,7 +4,7 @@
 
 `sudo apt update && sudo apt upgrade` \
 reboot \
-`sudo apt install git make gcc gnome-tweaks curl whois`
+`sudo apt install git make gcc gnome-tweaks curl pipx`
 
 ## Install fish
 
@@ -110,6 +110,99 @@ Make the installer executable and run it.
 
 Move the lisence file into the installation folder.
 
-## Install Obsidian
+## Install uv
+
+`curl -LsSf https://astral.sh/uv/install.sh | sh`
+
+## Pentesting specific
+
+### Install Obsidian
 
 `sudo snap install obsidian --classic`
+
+### Internet resources
+
+- Netcraft - Info gathering for domains
+- shodan - Internet scraping
+- secutriy headers - Tests HTTP response
+- SSL labs - Test SSL configuration
+
+### Apt Packages
+
+- `whois`
+- `dnsenum`
+- `freerdp2-x11`
+- `nmap`
+- `nbtscan` (NetNIOS enumeration)
+- `onesixtyone` (SNMP enum)
+- `snmp`
+- `gobuster`
+- `mysql-client-core-8.0`
+- `hashcat`
+
+### Snap packages
+
+- `enum4linux` (SMB Enum. Potential bug in program when getting users)
+- `powershell`
+
+### Seclist
+
+`wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip && unzip SecList.zip && rm -f SecList.zip`
+`mv SecLists-master /usr/share`
+
+### DNSRecon
+
+```sh
+git clone https://github.com/darkoperator/dnsrecon.git
+cd dnsrecon
+uv tool install dnsrecon
+uv run dnsrecon / dnsrecon
+```
+
+Add DNSRecond folder to path.
+
+### Nessus
+
+Download from [website](https://www.tenable.com/downloads/nessus). Install the .deb file and follow instructions.
+
+### Burb Suite
+
+Download install script from website and run it. In firefox use localhost as proxy on port 8080 and socks proxy as localhost on 9060. In firefox go to about:config` and change `network.captive-portal-service.enabled` to false
+
+### SQL
+
+Install [impacket](https://github.com/fortra/impacket) for mssql.
+
+```sh
+python3 -m pipx install impacket
+```
+
+run with `mssqlclient.py`
+
+Download [sqlmap](git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev) and add to path. Change sqlmap.py to use python3 instead of python.
+
+### Fuzzing
+
+[fuff](https://github.com/ffuf/ffuf)
+
+```sh
+sudo apt install golang-go
+git clone https://github.com/ffuf/ffuf
+cd ffuf
+go get
+go build
+```
+
+Can just apt install it...
+
+### Install metasploit
+
+`curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall`
+
+### wpscan
+
+```sh
+sudo apt install ruby-rubygems
+sudo apt install ruby-dev
+gem install wpscan
+```
